@@ -1,127 +1,199 @@
-# Awesome-Test-Automation-Script-Execution
+<p align="center">
+  <img src="./assets/banner.svg" alt="Awesome Test Automation and Script Execution Banner" width="100%" />
+</p>
 
-# Awesome Test Automation & Script Execution
+# 🚀 Awesome Test Automation & Script Execution [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-> A curated list of top Test Automation and Script Execution platforms — both SaaS/Hosted commercial solutions and open-source alternatives for authoring, running, and scaling automated tests across web, mobile, and API layers.
-> 🌟 Star this repo if you find it useful! 🌟
-
----
-
-## 📋 Table of Contents
-
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Postman Automated Testing](#postman-automated-testing)
-  - [TestComplete](#testcomplete)
-- [Open-Source Software](#-open-source-software)
-  - [Playwright](#playwright)
-  - [Cypress](#cypress)
-  - [Selenium WebDriver](#selenium-webdriver)
-  - [Karate](#karate)
-  - [Robot Framework](#robot-framework)
-  - [WebdriverIO](#webdriverio)
-  - [Appium](#appium)
-  - [VIVIDUS](#vividus)
-- [Comparison at a Glance](#-comparison-at-a-glance)
-- [Contributing](#-contributing)
+> 🎯 A curated, battle-tested collection of premier **Test Automation and Script Execution** platforms, cloud browser & mobile device grids, and open-source execution engines for authoring, running, and scaling automated end-to-end (E2E), API, and performance testing suites across modern CI/CD pipelines.
+> 
+> ⭐ **Star this repository if you find it valuable!** ⭐
 
 ---
 
-## 🟦 SaaS / Hosted Platforms
+## 📑 Table of Contents
 
-Commercial, cloud-hosted Test Automation and Script Execution platforms. These are not open-source but are included as reference points for feature comparison.
+- [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🟦 SaaS & Hosted Platforms](#-saas--hosted-platforms)
+- [🟩 Open-Source Software](#-open-source-software)
+- [📊 Framework & Platform Matrix](#-framework--platform-matrix)
+- [💡 Choosing the Right Test Automation Stack](#-choosing-the-right-test-automation-stack)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
-### Postman Automated Testing
-**Type:** API testing with script execution and CI automation
-Postman allows you to write test scripts in JavaScript that run before (pre-request) or after (post-response) an API call, using assertions to validate status codes, response bodies, and variables [citation:1]. Collections group individual tests into suites, and the Collection Runner executes them manually or on a schedule [citation:12]. For CI/CD pipelines, Postman offers a CLI (`postman collection run`) that supersedes the legacy Newman tool, supporting collection v3 format, Git workflows, and mock servers [citation:2]. Postman also integrates with Playwright UI tests to capture network traffic and validate API calls against Postman Collections, bridging UI and API validation [citation:1]. **Limitation:** Primarily API-focused; UI automation relies on external tools.
-**Best for:** Teams wanting API test automation tightly integrated with their existing Postman workspace, collections, and CI pipelines.
+---
 
-### TestComplete
-**Type:** Commercial GUI test automation for desktop, web, and mobile
-TestComplete (SmartBear) is a commercial GUI automation tool with an AI-powered object recognition engine, scriptless recorder, and support for over 500 controls . It supports VBscript, Python, and JavaScript, and integrates with Jira, TeamCity, and CucumberStudio [citation:3]. Pricing starts at approximately $1,210/user/year (Basic), with a free trial available [citation:3]. **Trade-offs:** Reviewers consistently note high cost, resource-intensive execution (requires powerful machines), and iOS support that sometimes lags behind OS releases [citation:3]. One reviewer explicitly noted it has "the same features than an opensource framework" while costing significantly more [citation:3].
-**Best for:** Enterprise teams needing recorder-driven desktop application testing with vendor support, where budget and hardware resources are not primary constraints.
+## 🌐 Sector Overview & Market Dynamics
+
+The global **test automation and automated script execution market** is estimated at **$24.2 billion to $34.1 billion** (projected to exceed **$84 billion to $145+ billion** by the mid-2030s at an accelerated 14%–17% CAGR) as continuous testing and automated CI/CD gating become essential for engineering velocity. 
+
+The sector is **highly fragmented** rather than winner-take-all: engineering organizations consistently adopt heterogeneous, multi-layered toolchains—leveraging modern open-source engines for code-first local execution (e.g., Playwright, Cypress, Puppeteer), specialized cloud infrastructure providers for massive parallel cross-browser/cross-device matrices (e.g., BrowserStack, Sauce Labs, LambdaTest), and specialized API execution workspaces (e.g., Postman).
+
+---
+
+## 🟦 SaaS & Hosted Platforms
+
+Commercial, cloud-hosted Test Automation and Script Execution platforms sorted descending by company scale (valuation / annual revenue).
+
+| 🏢 Platform | 💰 Scale (Valuation / Revenue) | 🏷️ Starting Pricing Tier | 🎁 Free Tier / Free Trial Limits | 🎯 Primary Focus & Strengths |
+|---|---|---|---|---|
+| **[Postman](https://www.postman.com/)** | **$5.6B valuation** (~$313M ARR) | **$19/user/month** (Team, billed annually; $29/mo monthly) or $9/mo (Solo) | **Free Forever:** 1 user, 10,000 Postman API calls/mo, 1,000 monitor calls/mo, 5 cloud integrations, and unlimited local collection runs | Comprehensive API automated testing, Newman/Postman CLI runner, pre/post-request scripts, and mock servers. |
+| **[BrowserStack](https://www.browserstack.com/)** | **$4.0B valuation** (~$230M ARR) | **$29/user/month** (Live Desktop, annual) or **$99/month** (Automate, 1 parallel thread, annual) | **Free Trial:** 30 mins Live desktop/mobile manual testing, 60 mins Automate cross-browser, 100 mins App Automate; **Percy Visual:** 5,000 free screenshots/month | Massive cloud matrix of 3,000+ real mobile devices and desktop browsers with instant parallel execution and Percy visual testing. |
+| **[TestComplete](https://smartbear.com/product/testcomplete/)** *(SmartBear)* | **$3.0B valuation** (~$500M+ SmartBear ARR) | **$1,210/user/year** (Base Node-Locked) to **$2,500+/year** (Pro/Floating licenses) | **14-day Free Trial:** Fully functional trial with unrestricted access to desktop, web, and mobile GUI object recognition and test recording | Enterprise desktop, web, and legacy client GUI test automation with scriptless AI visual object recognition and multi-language scripting (Python/JS/VBScript). |
+| **[LambdaTest](https://www.lambdatest.com/)** | **$400M valuation** (~$50M+ ARR) | **$15/user/month** (Live Testing, annual) or **$79/month** (Automation, 1 parallel test, annual) | **Free Forever:** 60 mins/month real browser live testing (10-min sessions), 10 responsive screenshot tests, 1 parallel test; **Smart UI:** 2,000 free screenshots lifetime limit | HyperExecute high-speed containerized parallel test orchestration, AI-driven test analytics, Smart UI visual diffing, and cross-browser testing. |
+| **[Sauce Labs](https://saucelabs.com/)** | **$151M raised** (~$92M ARR) | **$39/month** (Live Testing, annual) or **$149/month** (Virtual Device Cloud, 1 parallel test, annual) | **28-day Free Trial:** 60 automated and live testing minutes, up to 3 parallel virtual machines, access to real mobile devices and Sauce AI authoring | Cloud test execution grid supporting Selenium, Appium, Playwright, and Cypress across real device clouds, virtual emulators, and error analytics. |
 
 ---
 
 ## 🟩 Open-Source Software
 
-Community-driven Test Automation frameworks and script execution engines. All listed projects are open-source, actively maintained, and form the foundation of modern test automation.
+Community-driven, open-source Test Automation frameworks and script execution engines, sorted descending by GitHub stargazers count.
 
-### Playwright
-**Stack:** TypeScript / JavaScript / Python / Java / C# | **License:** Apache 2.0
-Playwright (Microsoft) is a modern end-to-end testing framework with a unified API for Chromium, WebKit, and Firefox [citation:6]. Key differentiators include **auto-waiting and auto-retrying** (eliminating flaky tests from timing issues), **test isolation** via BrowserContexts, and powerful tooling: Codegen for test generation, UI Mode with time-travel debugging, Trace Viewer for post-mortem analysis, and a VS Code extension [citation:6]. Tests run in parallel by default, and the framework supports device emulation for mobile coverage. Playwright is growing rapidly in popularity within the web development community [citation:6].
-**Best for:** Teams starting new automation projects wanting modern APIs, cross-browser coverage including WebKit, and best-in-class debugging tools.
+### 1. [Playwright](https://github.com/microsoft/playwright) [![Stars](https://img.shields.io/github/stars/microsoft/playwright?style=social&color=white)](https://github.com/microsoft/playwright/stargazers)
+* **GitHub Repository:** [microsoft/playwright](https://github.com/microsoft/playwright)
+* **Stack:** TypeScript / JavaScript / Python / Java / C# | **License:** Apache-2.0
+* **Overview:** Playwright (developed by Microsoft) has become the gold standard in modern web end-to-end testing. It features native, single-API cross-browser execution across Chromium, WebKit (Safari), and Firefox. Differentiators include auto-waiting, resilient web-first assertions, multi-context browser isolation, network payload mocking, UI Mode with time-travel debugging, and the powerful Trace Viewer.
+* **Best For:** Teams building modern web applications wanting bulletproof cross-browser reliability, lightning-fast execution, and zero test flakiness.
 
-### Cypress
-**Stack:** JavaScript / TypeScript | **License:** MIT
-Cypress is a developer-friendly testing framework that runs in the browser alongside your application, offering four test types: end-to-end, component, API, and accessibility [citation:5]. It provides time-travel debugging, automatic waiting, and rich error messages. Cypress is particularly strong for **component testing** and frontend-heavy applications, with `cy.mount()` for isolated component tests and `cy.request()` for API contract validation [citation:5]. The trade-off: E2E tests are "more difficult to set up, run, and maintain" compared to component or API tests, often requiring complex CI infrastructure [citation:5].
-**Best for:** Frontend teams wanting fast feedback with component testing and excellent debugging, accepting that E2E infrastructure requires more investment.
+### 2. [Puppeteer](https://github.com/puppeteer/puppeteer) [![Stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers)
+* **GitHub Repository:** [puppeteer/puppeteer](https://github.com/puppeteer/puppeteer)
+* **Stack:** JavaScript / TypeScript (Node.js) | **License:** Apache-2.0
+* **Overview:** Maintained by the Google Chrome team, Puppeteer provides a high-level DevTools protocol and WebDriver BiDi client to control Chrome, Chromium, and Firefox. It excels at headless script execution, automated PDF generation, single-page application (SPA) pre-rendering, performance timeline harvesting, and synthetic user journey testing.
+* **Best For:** Headless browser automation, web scraping, server-side UI rendering, and Chrome-first performance and synthetic scripting.
 
-### Selenium WebDriver
-**Stack:** Java / Python / C# / Ruby / JavaScript / Kotlin | **License:** Apache 2.0
-Selenium WebDriver is the long-standing standard for browser automation, implementing the W3C WebDriver specification with native browser control [citation:4][citation:15]. It supports all major browsers and languages, with Selenium Manager handling driver downloads automatically [citation:15]. The Selenium Grid component enables parallel execution across multiple machines and browsers [citation:4]. While newer frameworks offer more modern APIs, Selenium's ecosystem of cloud providers, grids, and integrations is unmatched — every major cloud testing platform documents Selenium integration as a first-class citizen.
-**Best for:** Teams needing maximum compatibility, broadest language support, and the most extensive ecosystem of cloud providers and community resources.
+### 3. [Cypress](https://github.com/cypress-io/cypress) [![Stars](https://img.shields.io/github/stars/cypress-io/cypress?style=social&color=white)](https://github.com/cypress-io/cypress/stargazers)
+* **GitHub Repository:** [cypress-io/cypress](https://github.com/cypress-io/cypress)
+* **Stack:** JavaScript / TypeScript | **License:** MIT
+* **Overview:** Cypress is an in-browser developer-centric testing framework tailored for modern frontend development. Running in the same run-loop as your application, Cypress provides instantaneous feedback, interactive time-travel snapshotting, native spy/stub capabilities, and dedicated component testing harnesses for React, Vue, and Angular.
+* **Best For:** Frontend engineering teams prioritizing developer experience, fast feedback loops, and unified component plus end-to-end testing.
 
-### Karate
-**Stack:** Java (no Java knowledge required for basic use) | **License:** MIT
-Karate is an open-source framework that unifies API testing for **REST, GraphQL, and SOAP** in one readable syntax [citation:7]. Key differentiators include built-in **schema validation** with fuzzy matchers, **data-driven testing** from CSV/JSON/inline tables, **built-in mock servers**, **parallel execution by default**, and the ability to **reuse functional tests as performance tests** via Gatling integration [citation:7]. Tests run deterministically at ~$0 in CI, with no model in the loop. The framework has 8,977+ GitHub stars, 2M+ monthly downloads, and is used by 76 of the Fortune 500 [citation:7]. Runs locally with zero telemetry.
-**Best for:** Teams wanting a single framework for API testing (REST/GraphQL/SOAP) with built-in mocking, data-driven tests, and performance test reuse, without assembling multiple libraries.
+### 4. [Selenium WebDriver](https://github.com/SeleniumHQ/selenium) [![Stars](https://img.shields.io/github/stars/SeleniumHQ/selenium?style=social&color=white)](https://github.com/SeleniumHQ/selenium/stargazers)
+* **GitHub Repository:** [SeleniumHQ/selenium](https://github.com/SeleniumHQ/selenium)
+* **Stack:** Java / Python / C# / Ruby / JavaScript / Kotlin | **License:** Apache-2.0
+* **Overview:** The foundational pillar of browser automation and the W3C WebDriver standard. Selenium provides ubiquitous cross-browser, multi-language driver bindings and features Selenium Grid for distributed multi-node parallel test execution. Selenium Manager automatically configures and fetches browser binaries without manual driver paths.
+* **Best For:** Enterprise test suites requiring multi-language compatibility, legacy browser integration, and maximum cloud infrastructure support.
 
-### Robot Framework
-**Stack:** Python | **License:** Apache 2.0
-Robot Framework is a keyword-driven test automation framework with a readable, tabular syntax accessible to both technical and non-technical team members [citation:8]. The **Keyword-Driven Style** emphasizes imperative action sequences (Open Page → Click Button → Verify Title), making test flow explicit and structured [citation:8]. It supports web, mobile, and API testing through libraries (SeleniumLibrary, AppiumLibrary, RequestsLibrary). Its Gherkin-style BDD syntax and extensibility make it popular in enterprise QA environments where test readability and collaboration between technical and business stakeholders matter.
-**Best for:** Teams wanting keyword-driven, readable tests that can unify web, mobile, and API testing under one syntax, particularly in enterprise QA environments.
+### 5. [k6](https://github.com/grafana/k6) [![Stars](https://img.shields.io/github/stars/grafana/k6?style=social&color=white)](https://github.com/grafana/k6/stargazers)
+* **GitHub Repository:** [grafana/k6](https://github.com/grafana/k6)
+* **Stack:** Go (Engine) / JavaScript (Test Scripting) | **License:** AGPL-3.0
+* **Overview:** Maintained by Grafana Labs, k6 is an ultra-performant modern load and script execution engine. Tests are authored in clean ES6 JavaScript while the execution core is powered by Go, consuming minimal memory and CPU to generate tens of thousands of concurrent requests from a single node. Includes native browser automation support (k6 browser) for hybrid frontend and backend performance testing.
+* **Best For:** High-concurrency load testing, API performance regression benchmarking, and developer-friendly performance test automation in CI pipelines.
 
-### WebdriverIO
-**Stack:** JavaScript / TypeScript | **License:** MIT
-WebdriverIO is a Node.js test automation framework built on the WebDriver protocol, supporting desktop and mobile browsers [citation:9]. It offers a rich plugin system and supports both classic WebDriver and modern **WebDriver BiDi** sessions. With BiDi enabled, `test.concurrent` can run tests simultaneously, each in its own browser window (`parallelMode: 'contexts'`) or isolated user context (`userContexts`) for cookie/storage isolation [citation:9]. **Limitations:** BiDi mode does not support multi-remote capabilities, `expect.poll`, or window/frame switching within concurrent tests [citation:9].
-**Best for:** JavaScript teams wanting a flexible, plugin-rich framework with strong cloud provider support and modern BiDi capabilities for parallel execution.
+### 6. [Locust](https://github.com/locustio/locust) [![Stars](https://img.shields.io/github/stars/locustio/locust?style=social&color=white)](https://github.com/locustio/locust/stargazers)
+* **GitHub Repository:** [locustio/locust](https://github.com/locustio/locust)
+* **Stack:** Python | **License:** MIT
+* **Overview:** Locust is an open-source, scriptable load testing tool where user journeys are defined directly as idiomatic Python code. It features a distributed, event-driven architecture using gevent coroutines to simulate millions of simultaneous users across clustered machines, backed by an interactive real-time web UI for live metrics and throughput analysis.
+* **Best For:** Python engineering teams desiring distributed, code-defined load testing without cumbersome XML or UI-heavy scenario builders.
 
-### Appium
-**Stack:** Java / Python / JavaScript / Ruby / C# | **License:** Apache 2.0
-Appium is the standard for mobile app automation, supporting native, hybrid, and mobile web apps on iOS and Android [citation:10]. It implements the WebDriver protocol, with platform-specific drivers: **XCUITest Driver** for iOS and **UiAutomator2** for Android [citation:10]. Because Appium is built on the WebDriver standard, teams already familiar with Selenium can reuse their knowledge. The driver architecture is pluggable, allowing the Appium team or community to add support for new platforms (TV, desktop) over time [citation:10]. **Limitation:** Native mobile automation has some WebDriver commands that are unsupported (e.g., cookie manipulation) [citation:10].
-**Best for:** Teams automating mobile apps across iOS and Android with a single framework, leveraging existing Selenium/WebDriver expertise.
+### 7. [Appium](https://github.com/appium/appium) [![Stars](https://img.shields.io/github/stars/appium/appium?style=social&color=white)](https://github.com/appium/appium/stargazers)
+* **GitHub Repository:** [appium/appium](https://github.com/appium/appium)
+* **Stack:** Node.js / Java / Python / JavaScript / Ruby / C# | **License:** Apache-2.0
+* **Overview:** Appium is the industry-standard mobile test automation engine supporting native, hybrid, and mobile web applications across iOS and Android. Built on the W3C WebDriver protocol, it translates standardized commands into vendor-provided automation backends (Apple XCUITest and Google UiAutomator2), preserving test code portability across mobile operating systems.
+* **Best For:** Cross-platform mobile application automation on real devices, emulators, and simulators.
 
-### VIVIDUS
-**Stack:** Java / Groovy | **License:** Apache 2.0
-VIVIDUS is a test automation tool designed for **test engineers without programming skills**, using a human-readable Test Actions Language in Gherkin format [citation:11]. It aims to combine testing tools in "one box" under a single language, supporting any application type (web, API, DB, mobile) and any test type. The target user is a tester with technical knowledge but no coding experience, who can specify controls and elements and write executable tests in plain language [citation:11]. Open-sourced under Apache 2.0 and integrated with modern CI/CD platforms.
-**Best for:** QA teams with non-programming testers who need to automate scenarios and push to CI/CD without writing code, using a single tool for multiple application types.
+### 8. [Robot Framework](https://github.com/robotframework/robotframework) [![Stars](https://img.shields.io/github/stars/robotframework/robotframework?style=social&color=white)](https://github.com/robotframework/robotframework/stargazers)
+* **GitHub Repository:** [robotframework/robotframework](https://github.com/robotframework/robotframework)
+* **Stack:** Python | **License:** Apache-2.0
+* **Overview:** Robot Framework is a mature, keyword-driven and acceptance-test-driven (ATDD/BDD) test automation framework. Its human-readable tabular syntax empowers technical and non-technical QA analysts alike. It features an extensive modular library ecosystem for web (SeleniumLibrary, Browser/Playwright library), mobile (AppiumLibrary), and API testing.
+* **Best For:** Enterprise QA organizations requiring keyword-driven, readable test authoring across heterogeneous environments.
+
+### 9. [WebdriverIO](https://github.com/webdriverio/webdriverio) [![Stars](https://img.shields.io/github/stars/webdriverio/webdriverio?style=social&color=white)](https://github.com/webdriverio/webdriverio/stargazers)
+* **GitHub Repository:** [webdriverio/webdriverio](https://github.com/webdriverio/webdriverio)
+* **Stack:** JavaScript / TypeScript | **License:** MIT
+* **Overview:** An extensible next-generation browser and mobile test automation framework for Node.js. WebdriverIO supports both classical WebDriver and modern WebDriver BiDi protocols with native support for Chrome DevTools. Features built-in mock services, visual regression plugins, and deep integrations with cloud device providers.
+* **Best For:** Full-stack JavaScript and TypeScript teams looking for an adaptable, plugin-rich framework spanning browser, mobile, and desktop.
+
+### 10. [Artillery](https://github.com/artilleryio/artillery) [![Stars](https://img.shields.io/github/stars/artilleryio/artillery?style=social&color=white)](https://github.com/artilleryio/artillery/stargazers)
+* **GitHub Repository:** [artilleryio/artillery](https://github.com/artilleryio/artillery)
+* **Stack:** Node.js / TypeScript | **License:** MPL-2.0
+* **Overview:** Artillery is a cloud-native, developer-first load testing and automated script execution tool designed for SREs and developers. It supports HTTP, WebSockets, Socket.io, and gRPC, and enables serverless distributed execution across AWS Lambda and AWS ECS Fargate without managing testing server fleets.
+* **Best For:** Serverless distributed performance testing, API load testing, and continuous SRE regression checks directly in CI/CD.
+
+### 11. [Karate](https://github.com/karatelabs/karate) [![Stars](https://img.shields.io/github/stars/karatelabs/karate?style=social&color=white)](https://github.com/karatelabs/karate/stargazers)
+* **GitHub Repository:** [karatelabs/karate](https://github.com/karatelabs/karate)
+* **Stack:** Java (DSL-based) | **License:** MIT
+* **Overview:** Karate unifies API testing (REST, GraphQL, SOAP), API contract validation, mock servers, and UI automation under a single expressive domain-specific language. Eliminates boilerplate code by offering built-in JSON/XML payload validation, fuzzy matching, and Gatling performance test reuse.
+* **Best For:** Teams wanting zero-boilerplate API contract testing, data-driven test tables, and unified functional-to-performance test reuse.
+
+### 12. [Taiko](https://github.com/getgauge/taiko) [![Stars](https://img.shields.io/github/stars/getgauge/taiko?style=social&color=white)](https://github.com/getgauge/taiko/stargazers)
+* **GitHub Repository:** [getgauge/taiko](https://github.com/getgauge/taiko)
+* **Stack:** JavaScript (Node.js) | **License:** Apache-2.0
+* **Overview:** Developed by ThoughtWorks, Taiko is a free and open-source Node.js library for automating Chromium-based browsers. Built from the ground up around "smart selectors" that locate page elements based on visual proximity and human semantics rather than brittle XPath or CSS selectors.
+* **Best For:** Fast and resilient browser test automation utilizing smart semantic locators and Gauge BDD test suites.
+
+### 13. [VIVIDUS](https://github.com/vividus-framework/vividus) [![Stars](https://img.shields.io/github/stars/vividus-framework/vividus)](https://github.com/vividus-framework/vividus/stargazers)
+* **GitHub Repository:** [vividus-framework/vividus](https://github.com/vividus-framework/vividus)
+* **Stack:** Java / Groovy | **License:** Apache-2.0
+* **Overview:** An all-in-one test automation tool designed for test engineers without programming backgrounds. Uses an expressive, human-readable Gherkin Test Actions Language to orchestrate tests across web, mobile apps, REST APIs, databases, and message brokers with zero code compilation.
+* **Best For:** Non-coding QA professionals and manual testers transitioning to automated multi-tier testing workflows.
 
 ---
 
-## 📊 Comparison at a Glance
+## 📊 Framework & Platform Matrix
 
-| Software | License | Stack | Primary Focus | Code Required | Best For |
-|----------|---------|-------|---------------|---------------|----------|
-| **Postman** | Proprietary | Cloud/CLI | API testing | JavaScript | API tests + Postman collections |
-| **TestComplete** | Proprietary | Windows | GUI (desktop/web/mobile) | VBScript/Python/JS | Recorder-driven enterprise GUI |
-| **Playwright** | Apache 2.0 | TS/JS/Python/Java/C# | Web E2E | Yes | Modern cross-browser automation |
-| **Cypress** | MIT | JS/TS | Web E2E + component | Yes | Frontend + component testing |
-| **Selenium** | Apache 2.0 | Java/Python/C#/Ruby/JS | Web automation | Yes | Maximum compatibility + ecosystem |
-| **Karate** | MIT | Java (syntax-based) | API (REST/GraphQL/SOAP) | Minimal | Unified API + mocks + perf |
-| **Robot Framework** | Apache 2.0 | Python | Keyword-driven (web/mobile/API) | Minimal (keywords) | Readable tests for mixed teams |
-| **WebdriverIO** | MIT | JS/TS | Web + mobile | Yes | Plugin-rich JS framework + BiDi |
-| **Appium** | Apache 2.0 | Java/Python/JS/Ruby/C# | Mobile (iOS/Android) | Yes | Cross-platform mobile automation |
-| **VIVIDUS** | Apache 2.0 | Java/Groovy | Multi-type (no-code) | No (Gherkin) | Non-programmer test automation |
+| Software / Engine | Category | License | Core Stack | Execution Focus | Code Required | Best Use Case |
+|---|---|---|---|---|---|---|
+| **[Postman](https://www.postman.com/)** | Commercial SaaS | Proprietary | Cloud / CLI | API & Microservices | Minimal (JS) | API contract validation & collection automation |
+| **[BrowserStack](https://www.browserstack.com/)** | Commercial Cloud | Proprietary | Cloud Grid | Cross-browser & Real Mobile | Based on framework | Instant parallel execution across 3,000+ real devices |
+| **[TestComplete](https://smartbear.com/product/testcomplete/)** | Commercial Desktop/SaaS | Proprietary | Windows / Cloud | Desktop, Web, Mobile GUI | Optional (Recorder / Script) | Enterprise desktop & Windows GUI automation |
+| **[LambdaTest](https://www.lambdatest.com/)** | Commercial Cloud | Proprietary | Cloud / HyperExecute | Cross-browser & Containerized | Based on framework | HyperExecute high-speed parallel container test runs |
+| **[Sauce Labs](https://saucelabs.com/)** | Commercial Cloud | Proprietary | Cloud Grid | Browser & Mobile Cloud | Based on framework | Enterprise cloud device grid & mobile error reporting |
+| **[Playwright](https://github.com/microsoft/playwright)** | Open-Source Engine | Apache-2.0 | TS/JS/Python/Java/C# | Modern Web E2E | Yes | Cross-browser reliability & auto-wait debugging |
+| **[Puppeteer](https://github.com/puppeteer/puppeteer)** | Open-Source Engine | Apache-2.0 | Node.js / TypeScript | Headless Chrome Automation | Yes | PDF generation, scraping, and synthetic scripting |
+| **[Cypress](https://github.com/cypress-io/cypress)** | Open-Source Engine | MIT | JS / TypeScript | Web E2E & Component | Yes | Frontend developer experience & in-browser testing |
+| **[Selenium](https://github.com/SeleniumHQ/selenium)** | Open-Source Engine | Apache-2.0 | Java/Python/C#/Ruby/JS | Browser Automation Standard | Yes | Broadest language support & cloud grid compatibility |
+| **[k6](https://github.com/grafana/k6)** | Open-Source Engine | AGPL-3.0 | Go / JavaScript | Performance & Load Scripting | Yes | High-concurrency load testing & CI performance gating |
+| **[Locust](https://github.com/locustio/locust)** | Open-Source Engine | MIT | Python | Distributed Load Testing | Yes | Developer-friendly Python-scripted load simulations |
+| **[Appium](https://github.com/appium/appium)** | Open-Source Engine | Apache-2.0 | Multi-language (Node Core) | Native & Hybrid Mobile | Yes | Native iOS (XCUITest) & Android (UiAutomator2) testing |
+| **[Robot Framework](https://github.com/robotframework/robotframework)** | Open-Source Framework | Apache-2.0 | Python | Keyword-driven Acceptance | Minimal (Keywords) | Cross-functional team acceptance & tabular test runs |
+| **[WebdriverIO](https://github.com/webdriverio/webdriverio)** | Open-Source Engine | MIT | Node.js / TypeScript | Web, Mobile & BiDi | Yes | Extensible JavaScript test architecture & BiDi sessions |
+| **[Artillery](https://github.com/artilleryio/artillery)** | Open-Source Engine | MPL-2.0 | Node.js / TypeScript | Cloud-Native SRE Load | Yes / YAML | Serverless load test execution on AWS Lambda/Fargate |
+| **[Karate](https://github.com/karatelabs/karate)** | Open-Source Framework | MIT | Java DSL | REST / GraphQL / SOAP APIs | Minimal (DSL) | Zero-boilerplate API contracts & test payload mocks |
+| **[Taiko](https://github.com/getgauge/taiko)** | Open-Source Library | Apache-2.0 | Node.js | Smart Locator Web E2E | Yes | Proximity-based smart selector browser automation |
+| **[VIVIDUS](https://github.com/vividus-framework/vividus)** | Open-Source Framework | Apache-2.0 | Java / Groovy | Multi-tier Low-Code | No (Gherkin) | No-code multi-tier QA test suites in CI pipelines |
+
+---
+
+## 💡 Choosing the Right Test Automation Stack
+
+```
+                                ┌──────────────────────────────────────────────┐
+                                │ What is your primary test automation target? │
+                                └──────────────────────┬───────────────────────┘
+                                                       │
+        ┌──────────────────────┬───────────────────────┼───────────────────────┬──────────────────────┐
+        ▼                      ▼                       ▼                       ▼                      ▼
+  [Modern Web E2E]       [Mobile Apps]           [API & Services]         [Load & Perf]         [Desktop / GUI]
+        │                      │                       │                       │                      │
+   Playwright /           Appium /               Karate / Postman        k6 / Locust /          TestComplete /
+   Cypress / Taiko        BrowserStack Cloud     Artillery               Artillery              Robot Framework
+```
+
+1. **For Modern Web Applications:** **[Playwright](https://github.com/microsoft/playwright)** is the recommended default choice for greenfield web applications due to its auto-wait semantics, fast execution, full WebKit/Chromium/Firefox coverage, and robust trace recording.
+2. **For Frontend Component Testing:** **[Cypress](https://github.com/cypress-io/cypress)** provides unparalleled developer feedback loops inside real browser contexts with dedicated component mounting.
+3. **For High-Concurrency Performance & Stress Testing:** **[k6](https://github.com/grafana/k6)** and **[Locust](https://github.com/locustio/locust)** empower engineering teams to author load tests as code and run them in CI/CD pipelines.
+4. **For Massive Cross-Browser & Device Matrices:** Pair open-source runners with cloud execution platforms like **[BrowserStack](https://www.browserstack.com/)**, **[LambdaTest](https://www.lambdatest.com/)**, or **[Sauce Labs](https://saucelabs.com/)** to avoid managing costly in-house device labs.
+5. **For Non-Programmer / Low-Code QA Teams:** **[Robot Framework](https://github.com/robotframework/robotframework)** and **[VIVIDUS](https://github.com/vividus-framework/vividus)** provide accessible keyword and Gherkin-driven authoring formats.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source Test Automation or Script Execution framework that should be listed here, please open a pull request with:
+Contributions, suggestions, and corrections are welcome! 
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source. Note that the open-source ecosystem is anchored by the major frameworks (Playwright, Cypress, Selenium), each with distinct strengths: Playwright for modern cross-browser automation, Cypress for frontend and component testing, Selenium for maximum compatibility, Karate for unified API testing, and Robot Framework/VIVIDUS for keyword-driven, low-code approaches accessible to non-programmers.
+1. 🍴 Fork the repository.
+2. 🌿 Create a feature branch: `git checkout -b feature/new-automation-tool`.
+3. 📝 Add the tool to the appropriate section with complete metadata, accurate pricing/stargazers links, and verified technical strengths.
+4. 🚀 Commit your changes: `git commit -m "Add ToolName to awesome-test-automation-script-execution"`.
+5. 📤 Push to your branch and open a Pull Request!
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
+This compilation is licensed under the [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) (CC0 1.0 - Public Domain Dedication). All product names, logos, and brands are property of their respective owners.
 
 ---
 
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+<p align="center">
+  <sub>Built with care for the QA and software engineering community. Star ⭐ this repository if you find it helpful!</sub>
+</p>
