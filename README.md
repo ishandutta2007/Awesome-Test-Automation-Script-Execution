@@ -2,7 +2,7 @@
   <img src="./assets/banner.svg" alt="Awesome Test Automation and Script Execution Banner" width="100%" />
 </p>
 
-# 🚀 Awesome Test Automation & Script Execution [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+# 🚀 Awesome Test Automation & Script Execution <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a> [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/) <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
 > 🎯 A curated, battle-tested collection of premier **Test Automation and Script Execution** platforms, cloud browser & mobile device grids, and open-source execution engines for authoring, running, and scaling automated end-to-end (E2E), API, and performance testing suites across modern CI/CD pipelines.
 > 
@@ -18,6 +18,8 @@
 - [📊 Framework & Platform Matrix](#-framework--platform-matrix)
 - [💡 Choosing the Right Test Automation Stack](#-choosing-the-right-test-automation-stack)
 - [🤝 Contributing](#-contributing)
+- [💖 Support & Community](#-support--community)
+- [📈 Star History](#-star-history)
 - [📄 License](#-license)
 
 ---
@@ -185,6 +187,23 @@ Contributions, suggestions, and corrections are welcome!
 3. 📝 Add the tool to the appropriate section with complete metadata, accurate pricing/stargazers links, and verified technical strengths.
 4. 🚀 Commit your changes: `git commit -m "Add ToolName to awesome-test-automation-script-execution"`.
 5. 📤 Push to your branch and open a Pull Request!
+
+---
+
+## 💖 Support & Community
+
+Thank you so much for using and exploring **Awesome Test Automation & Script Execution**! 🙏
+
+If this project added value to your QA workflows, helped you discover new test runners, or saved your team time:
+* ⭐ **Star** this repository to show your appreciation and help others discover it.
+* 🍴 **Fork** and share it with fellow QA engineers, test developers, and DevOps teams.
+* ☕ **Buy me a coffee / Sponsor:** If you'd like to support continued maintenance and curation of open-source resources, please check out the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007). Every bit of support is deeply appreciated!
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Test-Automation-Script-Execution&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Test-Automation-Script-Execution&type=date&legend=top-left)
 
 ---
 
