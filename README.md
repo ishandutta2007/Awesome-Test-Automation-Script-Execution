@@ -15,6 +15,7 @@
 - [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
 - [🟦 SaaS & Hosted Platforms](#-saas--hosted-platforms)
 - [🟩 Open-Source Software](#-open-source-software)
+- [🧪 Local AI QA Agents](#-local-ai-qa-agents)
 - [📊 Framework & Platform Matrix](#-framework--platform-matrix)
 - [💡 Choosing the Right Test Automation Stack](#-choosing-the-right-test-automation-stack)
 - [🤝 Contributing](#-contributing)
@@ -130,6 +131,17 @@ Community-driven, open-source Test Automation frameworks and script execution en
 
 ---
 
+## 🧪 Local AI QA Agents
+
+### [agent-qa](https://vostride.com) [![Stars](https://img.shields.io/github/stars/vostride/agent-qa?style=social)](https://github.com/vostride/agent-qa/stargazers)
+* **GitHub Repository:** [vostride/agent-qa](https://github.com/vostride/agent-qa)
+* **Stack:** TypeScript / Node.js 24+ | **License:** FSL-1.1-ALv2
+* **Overview:** Run natural-language web, Android and iOS tests through CLI, local dashboard or MCP, with persistent memidex memory, validated self-improvement and recorded steps/screenshots.
+* **Pricing:** $0 software for permitted local use; model and compute/browser/device costs are separate. Requires a configured model and test environment.
+* **Best For:** Repeated application QA that reuses validated knowledge and retains step evidence. [Documentation](https://vostride.com/docs/agent-qa).
+
+---
+
 ## 📊 Framework & Platform Matrix
 
 | Software / Engine | Category | License | Core Stack | Execution Focus | Code Required | Best Use Case |
@@ -152,6 +164,7 @@ Community-driven, open-source Test Automation frameworks and script execution en
 | **[Karate](https://github.com/karatelabs/karate)** | Open-Source Framework | MIT | Java DSL | REST / GraphQL / SOAP APIs | Minimal (DSL) | Zero-boilerplate API contracts & test payload mocks |
 | **[Taiko](https://github.com/getgauge/taiko)** | Open-Source Library | Apache-2.0 | Node.js | Smart Locator Web E2E | Yes | Proximity-based smart selector browser automation |
 | **[VIVIDUS](https://github.com/vividus-framework/vividus)** | Open-Source Framework | Apache-2.0 | Java / Groovy | Multi-tier Low-Code | No (Gherkin) | No-code multi-tier QA test suites in CI pipelines |
+| **[agent-qa](https://vostride.com)** | Local AI QA | FSL-1.1-ALv2 | TypeScript / Node.js 24+ | Web, Android & iOS | Natural language / YAML | Persistent memidex memory & validated self-improvement |
 
 ---
 
